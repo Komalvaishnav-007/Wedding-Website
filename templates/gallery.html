@@ -1,0 +1,66 @@
+{% include "header.html" %}
+{% load static %}
+<!-- Gallery Start -->
+<div class="container-fluid gallery position-relative py-5" id="weddingGallery">
+  <div class="position-absolute" style="top: -95px; right: 0">
+    <img src="../static/img/tamp-bg-1.png" class="img-fluid" alt="" />
+  </div>
+  <div
+    class="position-absolute"
+    style="top: -80px; left: 0; transform: rotate(150deg)"
+  >
+    <img src="static/img/tamp-bg-1.png" class="img-fluid" alt="" />
+  </div>
+  <div class="container position-relative py-5">
+    <div
+      class="text-center mx-auto pb-5 wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 800px"
+    >
+      <h1 class="display-2 text-dark">Wedding Gallery</h1>
+      <p class="fs-5 text-dark">
+        A beautiful collection of cherished moments capturing the love, joy, and
+        magic of our special day.
+      </p>
+    </div>
+    <div class="row g-4">
+      {% for ourdata in ourguardData %}
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.2s"
+      >
+        <div class="gallery-item">
+          <div class="gallery-img">
+            <img
+              class="img-fluid w-100"
+              src="/media/{{ourdata.Ourguards_img}}"
+              alt=""
+            />
+            <div class="hover-style"></div>
+            <div class="search-icon">
+              <a
+                href="/media/{{ourdata.Ourguards_img}}"
+                data-lightbox="Gallery-1"
+                class="my-auto"
+                ><i
+                  class="fas fa-plus btn-primary btn-primary-outline-0 p-3"
+                ></i
+              ></a>
+            </div>
+          </div>
+          <div
+            class="gallery-overlay bg-light border-secondary border-top-0 p-4"
+            style="border-style: double"
+          >
+            <h5>{{ourdata.Ourguards_placename}}</h5>
+            <p class="text-dark mb-0">{{ourdata.Ourguards_post}}</p>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- Gallery end -->
+{% include "footer.html" %}

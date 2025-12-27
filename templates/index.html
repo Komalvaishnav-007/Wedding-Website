@@ -1,0 +1,820 @@
+{% include "header.html" %}
+{% load static %}
+<!-- Carousel Start -->
+<div class="container-fluid carousel-header px-0">
+  <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators"></ol>
+    <div class="carousel-inner" role="listbox">
+      <div class="carousel-item active">
+        <img src="../static/img/carousel-1.jpg" class="img-fluid" alt="Image" />
+        <div class="carousel-caption">
+          <div class="p-3 mx-auto animated zoomIn" style="max-width: 900px">
+            <div
+              class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4"
+              style="border-style: double"
+            >
+              <h4
+                class="text-white text-uppercase fw-bold mb-0"
+                style="letter-spacing: 3px"
+              >
+                WE ARE GETTING MARRIED
+              </h4> 
+            </div>
+            <h1 class="display-1 text-capitalize text-white mb-3">
+              Anjali <i class="fa fa-heart text-primary"></i> Aman
+            </h1>
+            <div
+              class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-5"
+              style="border-style: double"
+            >
+              <h4
+                class="text-white text-uppercase fw-bold mb-0"
+                style="letter-spacing: 3px"
+              >
+                jan 28, 2026
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Carousel End -->
+<!--- Wedding Date -->
+
+<!-- Wedding Date Section -->
+<div class="container-fluid wedding-date-bg position-relative py-5">
+  <div class="position-absolute" style="top: -100px; right: 0">
+    <img src="../static/img/tamp-bg-1.png" class="img-fluid" alt="" />
+  </div>
+  <div
+    class="position-absolute"
+    style="top: -80px; left: 0; transform: rotate(150deg)"
+  >
+    <img src="static/img/tamp-bg-1.png" class="img-fluid" alt="" />
+  </div>
+
+  <div class="container py-5 wow zoomIn" data-wow-delay="0.1s">
+    <div
+      class="wedding-date text-center bg-light p-5"
+      style="
+        border-style: double !important;
+        border: 15px solid rgba(253, 93, 93, 0.5);
+        position: relative;
+        overflow: hidden;
+      "
+    >
+      <div class="wedding-date-content position-relative" style="z-index: 2">
+        <div
+          class="d-inline-block border-end-0 border-start-0 border-secondary p-2 mb-4"
+          style="border-style: double"
+        >
+          <h4
+            class="text-dark text-uppercase fw-bold mb-0"
+            style="letter-spacing: 3px"
+          >
+            jan 28, 2026
+          </h4>
+        </div>
+        <h1 class="display-4">We Are Getting Married</h1>
+        <p class="text-dark fs-5">
+          The Ora Cafe G38, Rooftop, The Grandstand, Love Garden Rd, Bhilwara,
+          Rajasthan
+        </p>
+
+        <!-- Countdown -->
+        <div
+          id="countdown"
+          class="d-flex align-items-center justify-content-center mb-5"
+        >
+          <div class="text-dark fs-2 me-4 text-center">
+            <div id="days">00</div>
+            <span>Days</span>
+          </div>
+          <div class="text-dark fs-2 me-4 text-center">
+            <div id="hours">00</div>
+            <span>Hours</span>
+          </div>
+          <div class="text-dark fs-2 me-4 text-center">
+            <div id="minutes">00</div>
+            <span>Mins</span>
+          </div>
+          <div class="text-dark fs-2 me-0 text-center">
+            <div id="seconds">00</div>
+            <span>Secs</span>
+          </div>
+        </div>
+
+       
+      </div>
+
+      <!-- Decorative elements -->
+      <div
+        class="position-absolute"
+        style="top: 15%; right: -30px; transform: rotate(320deg); opacity: 0.5"
+      >
+        <img src="static/img/attendance-bg.png" class="img-fluid" alt="" />
+      </div>
+      <div
+        class="position-absolute"
+        style="top: 15%; left: -10px; transform: rotate(-320deg); opacity: 0.5"
+      >
+        <img src="static/img/attendance-bg.png" class="img-fluid" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Countdown Script -->
+<script>
+  // Set the target date and time
+  const targetDate = new Date("jan 28, 2026 00:00:00").getTime();
+
+  // Update the countdown every 1 second
+  const countdownTimer = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    // Time calculations
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // Display result in the respective elements
+    document.getElementById("days").textContent = days
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("hours").textContent = hours
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("minutes").textContent = minutes
+      .toString()
+      .padStart(2, "0");
+    document.getElementById("seconds").textContent = seconds
+      .toString()
+      .padStart(2, "0");
+
+    // When countdown finishes
+    if (distance < 0) {
+      clearInterval(countdownTimer);
+      document.getElementById("countdown").innerHTML = `
+                <h2 class="text-danger">The Wedding Day Has Arrived! 💍🎉</h2>
+            `;
+    }
+  }, 1000);
+</script>
+
+<!-- Wedding Date -->
+
+<!-- Wedding Timeline start -->
+<div
+  class="container-fluid wedding-timeline bg-secondary position-relative overflow-hidden py-5"
+  id="weddingTimeline"
+>
+  <div
+    class="position-absolute"
+    style="top: 50%; left: -100px; transform: translateY(-50%); opacity: 0.5"
+  >
+    <img src="static/img/wedding-bg.png" class="img-fluid" alt="" />
+  </div>
+  <div
+    class="position-absolute"
+    style="
+      top: 50%;
+      right: -160px;
+      transform: translateY(-50%);
+      opacity: 0.5;
+      rotate: 335deg;
+    "
+  >
+    <img src="static/img/wedding-bg.png" class="img-fluid" alt="" />
+  </div>
+  <div class="container py-5">
+    <div class="text-center mb-5">
+      <h1 class="display-4 text-white">Wedding Planing Timeline</h1>
+    </div>
+    <div class="position-relative wedding-content">
+      <div class="row g-4">
+        <div class="col-6 col-md-6 col-xl-3 border border-bottom-0">
+          <div class="text-center p-3 wow fadeIn" data-wow-delay="0.1s">
+            <div class="mb-4 p-3 d-inline-flex">
+              <i class="fas fa-menorah text-primary fa-3x"></i>
+            </div>
+            <p class="text-primary">8:00PM - 11:00PM</p>
+            <h3 class="text-dark">Dinner</h3>
+            <p class="text-dark">
+              Join us for an evening filled with warmth, laughter, and
+              delightful cuisine as we gather for a special dinner celebration.
+              Surrounded by friends and family, enjoy a carefully crafted menu,
+              meaningful conversations, and cherished moments that make the
+              night truly memorable.
+            </p>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-xl-3 border border-top-0 border-start-0">
+          <div class="text-center p-3 wow fadeIn" data-wow-delay="0.3s">
+            <div class="mb-4 p-3 d-inline-flex">
+              <i class="fas fa-photo-video text-primary fa-3x"></i>
+            </div>
+            <p class="text-primary">12:00PM - 4:00PM</p>
+            <h3 class="text-dark">Photoshoot</h3>
+            <p class="text-dark">
+              Capture the magic of every moment with our exclusive photoshoot
+              experience designed to bring your story to life. Whether it’s a
+              personal celebration, couple session, or family portrait, we focus
+              on creating natural, timeless photographs that reflect your true
+              emotions and style in every frame.
+            </p>
+          </div>
+        </div>
+        <div
+          class="col-6 col-md-6 col-xl-3 border border-bottom-0 border-end-0"
+        >
+          <div class="text-center p-3 wow fadeIn" data-wow-delay="0.5s">
+            <div class="mb-4 p-3 d-inline-flex">
+              <i class="fas fa-dungeon text-primary fa-3x"></i>
+            </div>
+            <p class="text-primary">8:00PM - 11:00PM</p>
+            <h3 class="text-dark">Reception</h3>
+            <p class="text-dark">
+              Celebrate the beginning of a beautiful journey with us at the
+              reception, where love, laughter, and joy come together in one
+              unforgettable evening. Surrounded by family and friends, enjoy
+              heartfelt moments, music, and elegant decor as we raise a toast to
+              new beginnings and lifelong happiness.
+            </p>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-xl-3 border border-top-0">
+          <div class="text-center p-3 wow fadeIn" data-wow-delay="0.7s">
+            <div class="mb-4 p-3 d-inline-flex">
+              <i class="fas fa-ring text-primary fa-3x"></i>
+            </div>
+            <p class="text-primary">5:00PM - 7:00PM</p>
+            <h3 class="text-dark">Ceremony</h3>
+            <p class="text-dark">
+              Join us as we celebrate the heartfelt union of two souls in a
+              beautiful ceremony filled with love, blessings, and joy.
+              Surrounded by family and friends, this moment marks the beginning
+              of a lifelong journey together, woven with promises, traditions,
+              and cherished memories.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="position-absolute heart-circle"
+        style="bottom: 0; left: -18px"
+      >
+        <div
+          class="border border-2 border-primary rounded-circle p-1 bg-secondary"
+        ></div>
+      </div>
+      <div
+        class="position-absolute heart-circle"
+        style="top: 18px; right: -17px"
+      >
+        <div
+          class="border border-2 border-primary rounded-circle p-1 bg-secondary"
+        ></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Wedding Timeline End -->
+
+<!--- Bridesmaids & Groomsmen start -->
+<div class="container-fluid team position-relative py-5">
+  <div class="position-absolute" style="bottom: -80px; right: 0">
+    <img src="static/img/tamp-bg-1.png" class="img-fluid" alt="" />
+  </div>
+  <div
+    class="position-absolute"
+    style="bottom: -90px; left: 0; transform: rotate(150deg)"
+  >
+    <img src="static/img/tamp-bg-1.png" class="img-fluid" alt="" />
+  </div>
+  <div class="position-absolute" style="top: -100px; right: 0">
+    <img src="static/img/tamp-bg-1.png" class="img-fluid" alt="" />
+  </div>
+  <div
+    class="position-absolute"
+    style="top: -80px; left: 0; transform: rotate(150deg)"
+  >
+    <img src="static/img/tamp-bg-1.png" class="img-fluid" alt="" />
+  </div>
+  <div class="container py-5">
+    <div
+      class="mb-5 text-center mx-auto wow fadeInUp"
+      data-wow-delay="0.1s"
+      style="max-width: 800px"
+    >
+      <h1 class="display-2 text-dark">Bridesmaids & Groomsmen</h1>
+      <p class="fs-5 text-dark">
+        Standing by our side are the people who have filled our lives with
+        laughter, love, and unwavering support. Our bridesmaids and groomsmen
+        are more than just part of the celebration—they are lifelong friends and
+        family who have shared countless memories and continue to make this
+        journey even more special.
+      </p>
+    </div>
+    <div class="row g-4">
+      <div
+        class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.2s"
+      >
+        <div class="team-item">
+          <div class="team-img">
+            <div class="team-img-main">
+              <img
+                src="static/img/bridesmaid-1.png"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -30px;
+                left: -100px;
+                transform: rotate(50deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -40px;
+                right: -120px;
+                transform: rotate(-30deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <div class="team-content">
+            <div class="d-flex flex-column p-4">
+              <h5 class="text-white display-6 mb-1">Tanu</h5>
+              <h5 class="text-white fs-5 mb-0">Bridesmaid</h5>
+            </div>
+          </div>
+          <div class="team-social d-flex flex-column">
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://x.com/"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.4s"
+      >
+        <div class="team-item">
+          <div class="team-img">
+            <div class="team-img-main">
+              <img
+                src="static/img/bridesmaid-team-2.png"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -30px;
+                left: -100px;
+                transform: rotate(50deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -40px;
+                right: -120px;
+                transform: rotate(-30deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <div class="team-content">
+            <div class="d-flex flex-column p-4">
+              <h5 class="text-white display-6 mb-1">Shobhita</h5>
+              <h5 class="text-white fs-5 mb-0">Bridesmaid</h5>
+            </div>
+          </div>
+          <div class="team-social d-flex flex-column">
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://x.com/"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.6s"
+      >
+        <div class="team-item">
+          <div class="team-img">
+            <div class="team-img-main">
+              <img
+                src="static/img/bridesmaid-3.png"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -30px;
+                left: -100px;
+                transform: rotate(50deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -40px;
+                right: -120px;
+                transform: rotate(-30deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <div class="team-content">
+            <div class="d-flex flex-column p-4">
+              <h5 class="text-white display-6 mb-1">Navdha Jain</h5>
+              <h5 class="text-white fs-5 mb-0">Bridesmaid</h5>
+            </div>
+          </div>
+          <div class="team-social d-flex flex-column">
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://x.com/"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.8s"
+      >
+        <div class="team-item">
+          <div class="team-img">
+            <div class="team-img-main">
+              <img
+                src="static/img/bridesmaid-4.png"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -30px;
+                left: -100px;
+                transform: rotate(50deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -40px;
+                right: -120px;
+                transform: rotate(-30deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <div class="team-content">
+            <div class="d-flex flex-column p-4">
+              <h5 class="text-white display-6 mb-1">Kritika</h5>
+              <h5 class="text-white fs-5 mb-0">Bridesmaid</h5>
+            </div>
+          </div>
+          <div class="team-social d-flex flex-column">
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://x.com/"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.2s"
+      >
+        <div class="team-item">
+          <div class="team-img">
+            <div class="team-img-main">
+              <img
+                src="static/img/Groomsmen-1.png"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -30px;
+                left: -100px;
+                transform: rotate(50deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -40px;
+                right: -120px;
+                transform: rotate(-30deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <div class="team-content">
+            <div class="d-flex flex-column p-4">
+              <h5 class="text-white display-6 mb-1">Rohit</h5>
+              <h5 class="text-white fs-5 mb-0">Groomsmen</h5>
+            </div>
+          </div>
+          <div class="team-social d-flex flex-column">
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://x.com/"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.4s"
+      >
+        <div class="team-item">
+          <div class="team-img">
+            <div class="team-img-main">
+              <img
+                src="static/img/Groomsmen-2.png"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -30px;
+                left: -100px;
+                transform: rotate(50deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -40px;
+                right: -120px;
+                transform: rotate(-30deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <div class="team-content">
+            <div class="d-flex flex-column p-4">
+              <h5 class="text-white display-6 mb-1">Rahul</h5>
+              <h5 class="text-white fs-5 mb-0">Groomsmen</h5>
+            </div>
+          </div>
+          <div class="team-social d-flex flex-column">
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://x.com/"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+
+            <a
+              class="btn btn-light btn-light-outline-0"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.6s"
+      >
+        <div class="team-item">
+          <div class="team-img">
+            <div class="team-img-main">
+              <img
+                src="static/img/Groomsmen-3.png"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -30px;
+                left: -100px;
+                transform: rotate(50deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -40px;
+                right: -120px;
+                transform: rotate(-30deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <div class="team-content">
+            <div class="d-flex flex-column p-4">
+              <h5 class="text-white display-6 mb-1">Shubham</h5>
+              <h5 class="text-white fs-5 mb-0">Groomsmen</h5>
+            </div>
+          </div>
+          <div class="team-social d-flex flex-column">
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://x.com/"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp"
+        data-wow-delay="0.8s"
+      >
+        <div class="team-item">
+          <div class="team-img">
+            <div class="team-img-main">
+              <img
+                src="static/img/Groomsmen-4.png"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -30px;
+                left: -100px;
+                transform: rotate(50deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+            <div
+              class="team-img-bg position-absolute"
+              style="
+                bottom: -40px;
+                right: -120px;
+                transform: rotate(-30deg);
+                z-index: 1;
+              "
+            >
+              <img src="static/img/team-1-bg.png" class="img-fluid" alt="" />
+            </div>
+          </div>
+          <div class="team-content">
+            <div class="d-flex flex-column p-4">
+              <h5 class="text-white display-6 mb-1">Ravi</h5>
+              <h5 class="text-white fs-5 mb-0">Groomsmen</h5>
+            </div>
+          </div>
+          <div class="team-social d-flex flex-column">
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://x.com/"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0 mb-2"
+              href="https://www.facebook.com/"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              class="btn btn-light btn-light-outline-0"
+              href="https://www.instagram.com/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bridesmaids & Groomsmen End -->
+
+{% include "footer.html" %}

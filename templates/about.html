@@ -1,0 +1,156 @@
+{% include "header.html" %}
+{% load static %}
+        <!-- Hello! Start -->
+        <div class="container-fluid position-relative py-5" id="weddingAbout">
+            <div class="position-absolute" style="top: -35px; right: 0;">
+                <img src="static/img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="position-absolute" style="top: -10px; left: 0; transform: rotate(150deg);">
+                <img src="static/img/tamp-bg-1.png" class="img-fluid" alt="">
+            </div>
+            <div class="container position-relative py-5">
+                <div class="mx-auto text-center mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800;">
+                    <h1 class="text-primary display-1">Hello !</h1>
+                    <h4 class="text-dark mb-0">We invite you to celebrate our wedding</h4>
+                </div>
+                <div class="row"> 
+                    <div class="col-lg-12">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                                {% for ab in aboutData %}
+                                <div class="d-flex">
+                                    <div class="text-end my-auto pe-4">
+                                        <h3 class="text-primary mb-3">{{ab.Aboutus_title}}</h3>
+                                        <p class="text-dark mb-0" style="line-height: 30px;">{{ab.Aboutus_desc}}
+                                        </p>
+                                    </div>
+                                    <img src="/media/{{ab.Aboutus_img}}" class="img-fluid img-border" alt="">
+                                </div>
+                                {% endfor %} 
+                            </div>
+                             
+                            <div class="col-lg-2 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <i class="fa fa-heart fa-5x text-primary"></i>
+                               </div>
+                            </div>
+                            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                                 {% for ab in aboutData2 %}
+                                <div class="d-flex">
+                                    <img src="/media/{{ab.Aboutus2_img}}" class="img-fluid img-border" alt="">
+                                    <div class="my-auto ps-4">
+                                        <h3 class="text-primary mb-3">{{ab.Aboutus2_title}} </h3>
+                                        <p class="text-dark mb-0" style="line-height: 30px;">{{ab.Aboutus2_desc}} </p>
+                                    </div>
+                                </div>
+                                {% endfor %} 
+                            </div>
+                     
+                        </div>
+                    </div>
+                           
+                </div>
+                 
+            </div>
+        </div>
+        <!-- Hello! End -->
+
+
+         <!--About Start -->
+         <div class="container-fluid position-relative overflow-hidden bg-secondary py-5">
+            <img src="static/img/bg-flower.png" class="img-fluid position-absolute top-0" style="right: -15px; transform: rotate(270deg); opacity: 0.5;" alt="">
+            <img src="static/img/bg-flower.png" class="img-fluid position-absolute" style="bottom: 10px; left: -15px; transform: rotate(90deg); opacity: 0.5;" alt="">
+            <div class="container py-5 position-relative">
+                <div class="row g-5 align-items-center">
+                    <div class="col-xl-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div class="border-white bg-primary" style="border-style: double;">
+                            <img src="../static/img/about-1.jpg" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="wow fadeIn" data-wow-delay="0.3s">
+                            <h5 class="text-uppercase text-primary fw-bold mb-4">About Us</h5>
+                            <h1 class="display-5 text-white mb-4">We Make Your Every Moment</h1>
+                            <p class="text-white fs-5 mb-4">Anjali and Aman’s story is one of love, friendship, and countless shared memories that have grown stronger with time. What began as a beautiful connection soon turned into a bond built on trust, laughter, and understanding. Together, they bring out the best in each other, cherishing every moment as they step into this new chapter of life hand in hand, ready to create a lifetime of happiness and unforgettable moments.
+                            </p>
+                            <div class="tab-class bg-primary p-4">
+                                <ul class="nav d-flex mb-4">
+                                    <li class="nav-item">
+                                        <a class="d-flex py-2 text-center bg-white active" data-bs-toggle="pill" href="#tab-1">
+                                            <span class="text-dark" style="width: 150px;">Bride Info</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="d-flex py-2 mx-3 text-center bg-white" data-bs-toggle="pill" href="#tab-2">
+                                            <span class="text-dark" style="width: 150px;">Groom info</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="d-flex">
+                                                    <div class="me-4">
+                                                        <img src="static/img/bride.jpg" class="img-fluid w-100 img-border" alt="">
+                                                    </div>
+                                                    <div class="text-start my-auto">
+                                                        <h5 class="text-white fw-bold">Anjali</h5>
+                                                        <p class="text-white mb-3">Anjali, the radiant bride, who brings grace, joy, and love to every moment of their beautiful journey.
+                                                        </p>
+                                                        <div class="d-flex">
+                                                            <a href="https://www.facebook.com/" class="btn btn-primary btn-primary-outline-0 btn-sm-square me-2"><i class="fab fa-facebook-f"></i></a>
+                                                            <a href="https://x.com/" class="btn btn-primary btn-primary-outline-0 btn-sm-square me-2"><i class="fab fa-twitter"></i></a>
+                                                            <a href="https://www.instagram.com/" class="btn btn-primary btn-primary-outline-0 btn-sm-square me-2"><i class="fab fa-instagram"></i></a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="tab-2" class="tab-pane fade show p-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="d-flex">
+                                                    <div class="me-4">
+                                                        <img src="static/img/Groom.jpg" class="img-fluid w-100 img-border" alt="">
+                                                    </div>
+                                                    <div class="text-start my-auto">
+                                                        <h5 class="text-white fw-bold">Aman</h5>
+                                                        <p class="text-white mb-3">Aman, the groom whose charm, warmth, and devotion make this celebration of love complete.
+                                                        </p>
+                                                        <div class="d-flex">
+                                                            <a href="https://www.facebook.com/" class="btn btn-primary btn-primary-outline-0 btn-sm-square me-2"><i class="fab fa-facebook-f"></i></a>
+                                                            <a href="https://www.instagram.com/" class="btn btn-primary btn-primary-outline-0 btn-sm-square me-2"><i class="fab fa-twitter"></i></a>
+                                                            <a href="https://x.com/" class="btn btn-primary btn-primary-outline-0 btn-sm-square me-2"><i class="fab fa-instagram"></i></a>
+                                                 
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-5">
+                                <div class="d-flex align-items-center justify-content-center flex-shrink-0">
+                                    <a href="{% url 'about' %}" class="btn btn-primary btn-primary-outline-0 py-3 px-4">Read More</a>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="d-inline-block ms-4 me-3">
+                                        <i class="fa fa-phone fa-2x text-success border border-2 border-white p-2"></i>
+                                    </div>
+                                    <div class="d-flex flex-column flex-nowrap">
+                                        <h5 class="text-dark fw-bold mb-2">Call Us Anytime</h5>
+                                        <h4 class="text-primary mb-0">91 92345 67890</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <!-- About End -->
+        {% include "footer.html" %}

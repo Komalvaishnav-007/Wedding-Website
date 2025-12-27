@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Venues Directory</title>
+    <style>
+
+        h1 {
+            text-align: center;
+            color: #c44569;
+            font-size: 2.8em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            max-width: 1200px;
+        }
+        table, th, td {
+            border: 2px solid #ffb6c1;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+        }
+        th {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        tr:nth-child(even) {
+            background-color: #fdf2f8;
+        }
+        tr:hover {
+            background-color: #ffe4e6;
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+        .available { color: #27ae60; font-weight: bold; }
+        .unavailable { color: #e74c3c; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>💒 Premium Wedding Venues 💒</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Venue Name</th>
+                <th>Location</th>
+                <th>Capacity</th>
+                <th>Price Range</th>
+                <th>Availability</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for venue in venues %}
+            <tr>
+                <td>{{ venue.id }}</td>
+                <td><strong>{{ venue.name }}</strong></td>
+                <td>{{ venue.location }}</td>
+                <td>{{ venue.capacity }}</td>
+                <td>{{ venue.price_range }}</td>
+                <td class="{% if venue.is_available %}available{% else %}unavailable{% endif %}">
+                    {% if venue.is_available %}Available{% else %}Booked{% endif %}
+                </td>
+                
+            </tr>
+            {% empty %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
